@@ -11,11 +11,11 @@ FROM dockerfile/nodejs
 RUN \
   cd /tmp && \
   wget https://ghost.org/zip/ghost-latest.zip && \
-	unzip ghost-latest.zip -d /ghost && \
-	rm -f ghost-latest.zip && \
-	cd /ghost && \
-	npm install --production && \
-	useradd ghost --home /ghost
+  unzip ghost-latest.zip -d /ghost && \
+  rm -f ghost-latest.zip && \
+  cd /ghost && \
+  npm install --production && \
+  useradd ghost --home /ghost
 
 # Add files.
 ADD start.bash /ghost-start
