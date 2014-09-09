@@ -10,11 +10,11 @@ config = {
     // When running Ghost in the wild, use the production environment
     // Configure your URL and mail settings here
     production: {
-	    url: process.env.MY_BLOG_URL,
-	    mail: {},
-	    database: {
+        url: process.env.MY_BLOG_URL,
+        mail: {},
+        database: {
             client: 'mysql',
-            connection: {
+        connection: {
                 //filename: path.join(__dirname, '/content/data/ghost.db')
                 host: process.env.DB_1_PORT_3306_TCP_ADDR+":"+process.env.DB_1_PORT_3306_TCP_PORT,
                 user: 'root',
