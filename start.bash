@@ -1,8 +1,12 @@
 #!/bin/bash
 if [ -f /.mysql_db_created ]; 
 then
-        exec supervisord -n
-        exit 1
+        # exec supervisord -n
+        # exit 1
+        su ghost << EOF
+        cd "$GHOST"
+        NODE_ENV=${NODE_ENV:-production} npm start
+        EOF
 fi
 
 sleep 5
