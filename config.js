@@ -13,11 +13,16 @@ config = {
 		url: 'http://my-ghost-blog.com',
 		mail: {},
 		database: {
-			client: 'sqlite3',
-			connection: {
-				filename: path.join(__dirname, '/content/data/ghost.db')
-			},
-			debug: false
+			client: 'mysql',
+            connection: {
+                //filename: path.join(__dirname, '/content/data/ghost.db')
+                host: process.env.DB_1_PORT_3306_TCP_ADDR+":"+process.env.DB_1_PORT_3306_TCP_PORT,
+                user: 'root',
+                password: process.env.DB_PASSWORD,
+                database: process.env.DB_NAME,
+                charset: 'utf8'
+            },
+            debug: false
 		},
 		server: {
 			// Host to be passed to node's `net.Server#listen()`
