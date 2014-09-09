@@ -3,17 +3,17 @@
 
 // Documentation can be found at http://support.ghost.org/config/
 var path = require('path'),
-	config;
+    config;
 
 config = {
-	// ### Production
-	// When running Ghost in the wild, use the production environment
-	// Configure your URL and mail settings here
-	production: {
-		url: process.env.MY_BLOG_URL,
-		mail: {},
-		database: {
-			client: 'mysql',
+    // ### Production
+    // When running Ghost in the wild, use the production environment
+    // Configure your URL and mail settings here
+    production: {
+	    url: process.env.MY_BLOG_URL,
+	    mail: {},
+	    database: {
+            client: 'mysql',
             connection: {
                 //filename: path.join(__dirname, '/content/data/ghost.db')
                 host: process.env.DB_1_PORT_3306_TCP_ADDR+":"+process.env.DB_1_PORT_3306_TCP_PORT,
