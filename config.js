@@ -10,7 +10,7 @@ config = {
 	// When running Ghost in the wild, use the production environment
 	// Configure your URL and mail settings here
 	production: {
-		url: 'http://my-ghost-blog.com',
+		url: process.env.BLOG_URL,
 		mail: {},
 		database: {
 			client: 'mysql',
