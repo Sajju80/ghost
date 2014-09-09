@@ -25,7 +25,7 @@ ADD config.js /ghost/config.js
 RUN chmod 644 /ghost/config.js
 
 # Fix permissions for ghost user
-RUN chown -R ghost:ghost /ghost
+RUN chown -R ghost:ghost /data /ghost
 
 # Set environment variables.
 ENV NODE_ENV production
