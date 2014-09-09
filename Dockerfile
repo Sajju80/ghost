@@ -20,7 +20,7 @@ RUN \
 # Add files.
 ADD start.bash /ghost-start
 
-# Add wp-config with info for Wordpress to connect to  DB
+# Add wp-config with info for Wordpress to connect to DB
 ADD config.js /ghost/config.js
 RUN chmod 644 /ghost/config.js
 
