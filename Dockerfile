@@ -24,7 +24,7 @@ ADD start.bash /ghost-start
 ADD config.js /ghost/config.js
 RUN chmod 644 /ghost/config.js
 
-# Fix permissions for apache
+# Fix permissions for ghost user
 RUN chown -R ghost:ghost /ghost
 
 # Set environment variables.
