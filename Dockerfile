@@ -18,8 +18,8 @@ RUN \
   useradd ghost --home /ghost
 
 # Add files.
-ADD start.bash /ghost-start
-RUN chmod 755 /ghost-start
+#ADD start.bash /ghost-start
+#RUN chmod 755 /ghost-start
 
 # Add wp-config with info for Wordpress to connect to DB
 ADD config.js /ghost/config.js
@@ -38,7 +38,14 @@ ENV NODE_ENV production
 WORKDIR /ghost
 
 # Define default command.
-CMD ["bash", "/ghost-start"]
+#CMD ["bash", "/ghost-start"]
+
+# Add run script
+ADD run.sh run.sh
+RUN chmod 755 /*.sh
 
 # Expose ports.
 EXPOSE 2368
+
+# Define default command.
+CMD ["/run.sh"]
